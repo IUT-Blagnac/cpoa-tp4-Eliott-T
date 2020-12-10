@@ -4,27 +4,27 @@ import banque.exception.CompteException;
 
 
 /************************************************************
- * Classe Compte permettant de gérer des comptes simples.<BR>
- * Un Compte a un numéro, appartient à un propriétaire et on peut y faire des
- * versements (crédits) et des retraits (débits).<BR>
- * Seuls des contrôles de montants des opérations >=0 sont réalisés.<BR>
+ * Classe Compte permettant de gÃ©rer des comptes simples.<BR>
+ * Un Compte a un numÃ©ro, appartient Ã  un propriÃ©taire et on peut y faire des
+ * versements (crÃ©dits) et des retraits (dÃ©bits).<BR>
+ * Seuls des contrÃ´les de montants des opÃ©rations >=0 sont rÃ©alisÃ©s.<BR>
  * 
- * @author André Péninou.
+ * @author AndrÃ© PÃ©ninou.
  * @version 3.01
  *****************************/
 
 // Classe des comptes standards
 
 public class Compte extends Object
-// Si cet héritage n'est pas précisé, il est implicite
+// Si cet hÃ©ritage n'est pas prÃ©cisÃ©, il est implicite
 {
 	/*********************************
-	 * Partie privée d'implémentation
+	 * Partie privÃ©e d'implÃ©mentation
 	 **********************************/
 
 	// Attributs
 
-	// Nom du propriétaire
+	// Nom du propriÃ©taire
 	private String proprietaire;
 
 	// Numero de Compte
@@ -34,36 +34,36 @@ public class Compte extends Object
 	// Permettent de comptabiliser depots et retraits
 	private double debits, credits;
 
-	// Nb Opérations
+	// Nb OpÃ©rations
 	private int nbDebits, nbCredits;
 
 	// Constructeurs
 
 	/**
-	 * Constructeur non paramétré, appelé aussi constructeur "par défaut".<BR>
+	 * Constructeur non paramÃ©trÃ©, appelÃ© aussi constructeur "par dÃ©faut".<BR>
 	 * <BR>
-	 * Permet de créer un Compte.<BR>
-	 * Les crédits et débits sont initialisés à 0. le numéro est initialisé à
-	 * "Pas de numéro", le propriétaire à "Pas de propriétaire"<BR>
+	 * Permet de crÃ©er un Compte.<BR>
+	 * Les crÃ©dits et dÃ©bits sont initialisÃ©s Ã  0. le numÃ©ro est initialisÃ© Ã 
+	 * "Pas de numÃ©ro", le propriÃ©taire Ã  "Pas de propriÃ©taire"<BR>
 	 * <BR>
 	 * 
 	 * @see Compte#Compte(String, String)
 	 */
 	public Compte() {
-		this("Pas de numéro", "Pas de propriétaire");
+		this("Pas de numÃ©ro", "Pas de propriÃ©taire");
 	}
 
 	/**
-	 * Constructeur paramétré.<BR>
+	 * Constructeur paramÃ©trÃ©.<BR>
 	 * <BR>
-	 * Permet de créer un Compte en donnant son numéro et son propriétaire.<BR>
-	 * Les crédits et débits sont initialisés à 0.<BR>
+	 * Permet de crÃ©er un Compte en donnant son numÃ©ro et son propriÃ©taire.<BR>
+	 * Les crÃ©dits et dÃ©bits sont initialisÃ©s Ã  0.<BR>
 	 * <BR>
 	 * 
 	 * @param pNumCompte
-	 *            Le numéro du Compte.
+	 *            Le numÃ©ro du Compte.
 	 * @param pNomProp
-	 *            Le nom du propriétaire.
+	 *            Le nom du propriÃ©taire.
 	 */
 	public Compte(String pNumCompte, String pNomProp) {
 		this.numCompte = pNumCompte;
@@ -85,21 +85,21 @@ public class Compte extends Object
 	}
 
 	/**
-	 * Permet d'obtenir le propriétaire d'un Compte.<BR>
+	 * Permet d'obtenir le propriÃ©taire d'un Compte.<BR>
 	 * <BR>
 	 * 
 	 * @see Compte#setProprietaire(String)
-	 * @return Le propriétaire du Compte.
+	 * @return Le propriÃ©taire du Compte.
 	 */
 	public String getProprietaire() {
 		return this.proprietaire;
 	}
 
 	/**
-	 * Permet d'obtenir le numéro d'un Compte.<BR>
+	 * Permet d'obtenir le numÃ©ro d'un Compte.<BR>
 	 * <BR>
 	 * 
-	 * @return Le numéro du Compte.
+	 * @return Le numÃ©ro du Compte.
 	 */
 	public String getNumCompte() {
 		return this.numCompte;
@@ -110,7 +110,7 @@ public class Compte extends Object
 	 * <BR>
 	 * Affiche this.toString()<BR>
 	 * <BR>
-	 * <B>ATTENTION : Méthode spéciale pour les TP.</B><BR>
+	 * <B>ATTENTION : MÃ©thode spÃ©ciale pour les TP.</B><BR>
 	 * <BR>
 	 */
 	public void afficher() {
@@ -118,10 +118,10 @@ public class Compte extends Object
 	}
 
 	/**
-	 * Permet d'obtenir la représentation String d'un compte.<BR>
+	 * Permet d'obtenir la reprÃ©sentation String d'un compte.<BR>
 	 * <BR>
-	 * Construit une chaine contenant le numéro de compte, le propriétaire, le
-	 * total des débits, le total des crédits, le nombre d'opérations réalisées.<BR>
+	 * Construit une chaine contenant le numÃ©ro de compte, le propriÃ©taire, le
+	 * total des dÃ©bits, le total des crÃ©dits, le nombre d'opÃ©rations rÃ©alisÃ©es.<BR>
 	 * "  Num. : aaa  - Prop. : bbb - Debit xxx E / Credit yyy E / NbOps zzz"<BR>
 	 * <BR>
 	 */
@@ -136,11 +136,11 @@ public class Compte extends Object
 	/**
 	 * Permet d'effectuer un retrait sur un Compte.<BR>
 	 * <BR>
-	 * Effectue un retrait (débit) de pSomme Euros sur le Compte.<BR>
-	 * Lève une exception si pSomme < 0. <BR>
+	 * Effectue un retrait (dÃ©bit) de pSomme Euros sur le Compte.<BR>
+	 * LÃ¨ve une exception si pSomme < 0. <BR>
 	 * 
 	 * @param pSomme
-	 *            Le montant retiré sur le Compte.
+	 *            Le montant retirÃ© sur le Compte.
 	 * @throws CompteException
 	 *             Lorsque pSomme < 0
 	 * @see Compte#deposer(double)
@@ -148,20 +148,20 @@ public class Compte extends Object
 	public void retirer(double pSomme) throws CompteException {
 		if (pSomme < 0) {
 			throw new CompteException(
-					"Erreur de somme négative lors d'un retrait sur " + this.numCompte);
+					"Erreur de somme nÃ©gative lors d'un retrait sur " + this.numCompte);
 		}
 		this.debits = this.debits + pSomme;
 		this.nbDebits++;
 	}
 
 	/**
-	 * Permet d'effectuer un dépot sur un Compte.<BR>
+	 * Permet d'effectuer un dÃ©pot sur un Compte.<BR>
 	 * <BR>
-	 * Effectue un dépot (crédit) de pSomme Euros sur le Compte.<BR>
-	 * Lève une exception si pSomme < 0.<BR>
+	 * Effectue un dÃ©pot (crÃ©dit) de pSomme Euros sur le Compte.<BR>
+	 * LÃ¨ve une exception si pSomme < 0.<BR>
 	 * 
 	 * @param pSomme
-	 *            Le montant déposé sur le Compte.
+	 *            Le montant dÃ©posÃ© sur le Compte.
 	 * @throws CompteException
 	 *             Lorsque pSomme < 0
 	 * @see Compte#retirer(double)
@@ -169,18 +169,18 @@ public class Compte extends Object
 	public void deposer(double pSomme) throws CompteException {
 		if (pSomme < 0) {
 			throw new CompteException(
-					"Erreur de somme négative lors d'un dépot sur " + this.numCompte);
+					"Erreur de somme nÃ©gative lors d'un dÃ©pot sur " + this.numCompte);
 		}
 		this.credits = this.credits + pSomme;
 		this.nbCredits++;
 	}
 
 	/**
-	 * Permet de modifier le propriétaire d'un Compte.<BR>
+	 * Permet de modifier le propriÃ©taire d'un Compte.<BR>
 	 * <BR>
 	 * 
 	 * @param pNomProp
-	 *            Le nom du propriétaire.
+	 *            Le nom du propriÃ©taire.
 	 * @see Compte#getProprietaire()
 	 */
 	public void setProprietaire(String pNomProp) {

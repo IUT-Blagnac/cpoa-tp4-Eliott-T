@@ -19,7 +19,7 @@ public class ApplicationAgenceBancaire {
 	public static void main(String argv[]) {
 		AgenceBancaire ab = new AgenceBancaire("Caisse ecureuil", "Pibrac");
 		Action<AgenceBancaire> a1 = new ActionListeDesComptes<AgenceBancaire>("Afficher les comptes de l'agence");
-		Action<AgenceBancaire> a2 = new ActionVoirCompteNumero<AgenceBancaire>("Afficher le compte (par son numéro)");
+		Action<AgenceBancaire> a2 = new ActionVoirCompteNumero<AgenceBancaire>("Afficher le compte (par son numÃ©ro)");
 		Action<AgenceBancaire> a3 = new ActionAjouterCompte<>("Ajouter un compte");
 		Action<AgenceBancaire> a4 = new ActionSupprimerCompte<>("Supprimer un compte");
 		Action<AgenceBancaire> a5 = new ActionDeposerArgent<>("Deposer");
@@ -35,7 +35,7 @@ public class ApplicationAgenceBancaire {
 		liste3.add(a3);
 		liste3.add(a4);
 
-		Action<AgenceBancaire> m1 = new ActionListAgenceBancaire<>("Afficher le menu des opérations sur comptes", "Opérations comptes", liste2);
+		Action<AgenceBancaire> m1 = new ActionListAgenceBancaire<>("Afficher le menu des opÃ©rations sur comptes", "OpÃ©rations comptes", liste2);
 		Action<AgenceBancaire> m2 = new ActionListAgenceBancaire<>("Afficher le menu de gestion des comptes", "Gestions comptes", liste3);
 
 
@@ -45,7 +45,7 @@ public class ApplicationAgenceBancaire {
 		liste1.add(m1);
 		liste1.add(m2);
 
-		ActionList<AgenceBancaire> al = new ActionListAgenceBancaire<AgenceBancaire>("Menu principal","Général", liste1);
+		ActionList<AgenceBancaire> al = new ActionListAgenceBancaire<AgenceBancaire>("Menu principal","GÃ©nÃ©ral", liste1);
 		try {
 			al.execute(ab);
 
